@@ -1,0 +1,19 @@
+ethereum_rpc = "https://ethereum-hoodi-rpc.publicnode.com"
+drosera_rpc = "https://relay.hoodi.drosera.io"
+eth_chain_id = 560048
+drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
+
+[traps]
+
+[traps.high_transfer]
+path = "out/HighTransferTrap.sol/HighTransferTrap.json"
+response_contract = "0x665eae769aec2fd670d42af6f25ceffa9486bb41e8b16b11dc9380c2c03fecd5"
+response_function = "respondToHighTransfer(address,uint256,uint256,uint256)"
+cooldown_period_blocks = 33
+min_number_of_operators = 1
+max_number_of_operators = 2
+block_sample_size = 5   # send last 5 samples (we use at least 2)
+private_trap = true
+whitelist = []
+
+
